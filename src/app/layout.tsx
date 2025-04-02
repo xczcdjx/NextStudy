@@ -1,6 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import {ADLaM_Display, Comforter, Geist, Geist_Mono, Inter} from "next/font/google";
 import "./globals.css";
+import localFont from "next/font/local";
+// google 字体
+const inter=ADLaM_Display({
+    subsets:['latin'],
+    weight:'400'
+})
+// 本地字体
+const myFont=localFont({
+    src:'../../public/font/Comforter-Regular.ttf',
+    weight:'400'
+})
 //  根布局
 export default function RootLayout({
   children,
@@ -8,10 +19,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.className}>
       <body
+          style={{fontFamily:'ADLaM Display'}}
       >
-      <h3>我是根页面布局</h3>
         {children}
       </body>
     </html>
