@@ -7,9 +7,9 @@ export default function Layout({
     children: React.ReactNode;
 }>) {
     return (
-        <>
-            <Header/>
+        <div className={'max-w-5xl mx-auto'}>
+            {/*<Header/>*/}
             {children}
-        </>
+        </div>
     );
 }
