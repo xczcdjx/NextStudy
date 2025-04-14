@@ -8,6 +8,7 @@ export default function Home() {
       <li><Link href={'/count'}>go count</Link></li>
       <li><Link href={'/test'}>go test</Link></li>
       <li><Link href={'/step1End'}>go step1End</Link></li>
+      <li><Link href={'/article'}>go Article</Link></li>
     </ul>
   </div>);
 }
