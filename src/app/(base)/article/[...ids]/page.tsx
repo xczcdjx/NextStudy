@@ -4,7 +4,7 @@ export default async function ({
                                    params
                                }:{params:Promise<string[]>}){
     const {ids}=await params
-    return <div>
+    return <div className='text-white'>
         article detail ids: {ids}
     </div>
 
