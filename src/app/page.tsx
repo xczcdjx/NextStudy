@@ -10,6 +10,7 @@ export default function Home() {
       <li><Link href={'/step1End'}>go step1End</Link></li>
       <li><Link href={'/article'}>go Article</Link></li>
       <li><Link href={'/list'}>go List</Link></li>
+      <li><Link href={'/parallelRouter'}>go parallelRouter</Link></li>
     </ul>
   </div>);
 }
