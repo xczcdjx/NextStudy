@@ -4,6 +4,7 @@ import "./globals.css";
 import localFont from "next/font/local";
 import {AntdRegistry} from "@ant-design/nextjs-registry";
 import AntdProvider from "@/components/AntdProvider";
+import StyledJsxRegistry from "@/lib/StyledJsxRegistry";
 // google 字体
 const inter=ADLaM_Display({
     subsets:['latin'],
@@ -29,7 +30,9 @@ export default function RootLayout({
 
           {/*{ children }*/}
           <AntdProvider>
-              {children}
+              <StyledJsxRegistry>
+                  {children}
+              </StyledJsxRegistry>
           </AntdProvider>
 
       </AntdRegistry>
