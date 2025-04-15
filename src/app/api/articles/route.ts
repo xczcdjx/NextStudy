@@ -1,7 +1,15 @@
 import {NextRequest, NextResponse} from "next/server";
 import db from "@/db/lowdb";
 import {getBody} from "@/utils/bodyParser";
-
+/**
+ * @swagger
+ * /api/articles:
+ *   get:
+ *     description: Returns the hello world
+ *     responses:
+ *       200:
+ *         description: Hello World!
+ */
 export async function GET(req: NextRequest) {
     const search=req.nextUrl.searchParams
     const pageNo=Number(search.get('pageNo'))||1

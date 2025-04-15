@@ -15,7 +15,12 @@ const nextConfig: NextConfig = {
         remotePatterns:[{
             hostname:'192.168.124.35',
         }]
-    }
+    },
+    /*transpilePackages: [
+        // 'react-syntax-highlighter',
+        'swagger-client',
+        'swagger-ui-react',
+    ],*/
 };
 
 export default nextConfig;
