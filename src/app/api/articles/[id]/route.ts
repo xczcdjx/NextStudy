@@ -51,7 +51,7 @@ export async function DELETE(req:Request,{params}:{params:Promise<idPrams>}){
  *         schema:
  *           type: string
  *         description: 文章 ID
- *    responses:
+ *     responses:
  *       200:
  *         description: 成功返回文章列表
  */

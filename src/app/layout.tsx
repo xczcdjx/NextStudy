@@ -6,7 +6,7 @@ import {AntdRegistry} from "@ant-design/nextjs-registry";
 import AntdProvider from "@/components/AntdProvider";
 import StyledJsxRegistry from "@/lib/StyledJsxRegistry";
 // google 字体
-const inter=ADLaM_Display({
+/*const inter=ADLaM_Display({
     subsets:['latin'],
     weight:'400'
 })
@@ -14,7 +14,7 @@ const inter=ADLaM_Display({
 const myFont=localFont({
     src:'../../public/font/Comforter-Regular.ttf',
     weight:'400'
-})
+})*/
 //  根布局
 export default function RootLayout({
   children,
@@ -22,7 +22,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.className}>
+    // <html lang="en" className={inter.className}>
+    <html lang="en">
       <body
           style={{fontFamily:'ADLaM Display'}}
       >
