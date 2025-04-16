@@ -5,10 +5,27 @@ import {getBody} from "@/utils/bodyParser";
  * @swagger
  * /api/articles:
  *   get:
- *     description: Returns the hello world
+ *     summary: 获取文章列表
+ *     description: 分页获取文章，可通过 query 参数过滤
+ *     parameters:
+ *       - in: query
+ *         name: pageNo
+ *         schema:
+ *           type: integer
+ *         description: 页码
+ *       - in: query
+ *         name: pageSize
+ *         schema:
+ *           type: integer
+ *         description: 每页数量
+ *       - in: query
+ *         name: query
+ *         schema:
+ *           type: string
+ *         description: 模糊查询关键词
  *     responses:
  *       200:
- *         description: Hello World!
+ *         description: 成功返回文章列表
  */
 export async function GET(req: NextRequest) {
     const search=req.nextUrl.searchParams
@@ -33,7 +50,21 @@ export async function GET(req: NextRequest) {
         },
     })
 }
-
+/**
+ * @swagger
+ * /api/articles:
+ *   post:
+ *     summary: 新增文章
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/addPostDto'
+ *     responses:
+ *       200:
+ *         description: 修改成功
+ */
 export async function POST(req: Request) {
     try {
         const data = await getBody<Omit<PostType, 'id'>>(req)
@@ -52,6 +83,24 @@ export async function POST(req: Request) {
         // return NextResponse.error()
     }
 }
+/**
+ * @swagger
+ * /api/articles:
+ *   patch:
+ *     summary: 修改文章
+ *     description: 根据 ID 修改文章内容
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/upPostDto'
+ *     responses:
+ *       200:
+ *         description: 修改成功
+ *       404:
+ *         description: no data
+ */
 
 export async function PATCH(req: Request) {
     try {

@@ -3,8 +3,28 @@ import {NextResponse} from "next/server";
 interface idPrams{
     id:string
 }
+/**
+ * @swagger
+ * /api/articles/{id}:
+ *   delete:
+ *     summary: 删除文章
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: 文章 ID
+ *     responses:
+ *       200:
+ *         description: 删除成功
+ *       404:
+ *         description: 未找到数据
+ */
+
 export async function DELETE(req:Request,{params}:{params:Promise<idPrams>}){
     const {id}=await params
+    console.log(id)
     const data=db.data.posts
     const index=data.findIndex(it=>it.id===id)
     if (index!==-1){
@@ -19,6 +39,22 @@ export async function DELETE(req:Request,{params}:{params:Promise<idPrams>}){
         msg: 'no data',
     })
 }
+/**
+ * @swagger
+ * /api/articles/{id}:
+ *   get:
+ *     summary: 文章详情
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: 文章 ID
+ *    responses:
+ *       200:
+ *         description: 成功返回文章列表
+ */
 export async function GET(req:Request,{params}:{params:Promise<idPrams>}){
     const {id}=await params
     const data=db.data.posts

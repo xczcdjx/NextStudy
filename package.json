@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "openapi:yaml": "node gene-yaml.js",
+    "postbuild": "cpy 'src/schemas/**/*.swagger.yaml' public/openapi --flat",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -27,7 +29,15 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "cpy-cli": "^5.0.0",
+    "eslint": "^9.24.0",
+    "eslint-plugin-jsdoc": "^50.6.9",
+    "express": "^5.1.0",
+    "glob": "^11.0.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
     "tailwindcss": "^4",
+    "typeconv": "^2.3.1",
     "typescript": "^5"
   }
 }
