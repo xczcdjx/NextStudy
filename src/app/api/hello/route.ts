@@ -14,7 +14,7 @@ import {NextResponse} from "next/server";
 * 解决方法
 * https://nextjs.org/docs/14/app/building-your-application/data-fetching/fetching-caching-and-revalidating
 * */
-// 设置5s内缓存
+// 设置5s内缓存(在生产环境有效)
 export const revalidate=5
 export async function GET() {
     // Do whatever you want
