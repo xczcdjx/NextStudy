@@ -12,6 +12,8 @@ export default function Home() {
       <li><Link href={'/list'}>go List</Link></li>
       <li><Link href={'/parallelRouter'}>go parallelRouter</Link></li>
       <li><Link href={'/interceptorRouter'}>go interceptorRouter</Link></li>
+      <li><Link href={'/login'}>go Login</Link></li>
+      <li><Link href={'/info'}>go Info</Link></li>
     </ul>
   </div>);
 }
