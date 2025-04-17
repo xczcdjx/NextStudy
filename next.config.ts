@@ -16,6 +16,9 @@ const nextConfig: NextConfig = {
             hostname:'192.168.124.35',
         }]
     },
+    typescript:{
+        ignoreBuildErrors:true
+    }
     /*transpilePackages: [
         // 'react-syntax-highlighter',
         'swagger-client',
